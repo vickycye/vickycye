@@ -13,7 +13,8 @@ module.exports = {
       'cream' : '#f0e6cc',
       'white' : '#ffffff',
       'tan-brown' : '#a86f51',
-      'pinkish-red' : '#d63c58'
+      'pinkish-red' : '#d63c58',
+      'mint-green' : '#c0e6be'
     }
   },
   plugins: [],
