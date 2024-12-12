@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="output.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<body>
+    <!-- navbar -->
+    <nav class="w-full fixed top-0 bg-white z-10 dark:bg-discord-lighter-gray">
+        <div class="container mx-auto py-5 flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <!-- <img class="w-8" src="../images/logo.png" alt=""/> -->
+            <a href="/index.html">
+                <img class="w-8" src="/images/logo.png" alt="logo">
+            </a>
+            <span class="text-2xl font-bold text-slate-800 dark:text-white"></span>
+          </div>
+          <ul class="hidden md:flex space-x-20 text-white dark:text-gray-100 font-bold text-sm uppercase">
+            <li class="hover:text-light-orange-10">
+              <a href="#about">about me</a>
+            </li>
+            <li class="hover:text-light-orange-10">
+              <a href="/blog.html">blog</a>
+            </li>
+            <li class="hover:text-light-orange-10">
+              <a href="#works">works</a>
+            </li>
+            <li class="hover:text-light-orange-10">
+              <a href="#contact">contact</a>
+            </li>
+          </ul>
+          <!-- <div id="hamburger" class="space-y-1 md:hidden cursor-pointer z-20">
+            <div class="w-6 h-0.5 bg-black"></div>
+            <div class="w-6 h-0.5 bg-black"></div>
+            <div class="w-6 h-0.5 bg-black"></div>
+          </div>
+          <ul id="menu"
+            class="hidden bg-indigo-900 absolute left-0 top-0 w-full p-10 rounded-b-3xl space-y-10 text-white text-center">
+            <li>
+              <a id="hLink" href="#">homepage</a>
+            </li>
+            <li>
+              <a id="hLink" href="#about">about me</a>
+            </li>
+            <li>
+              <a id="hLink" href="#services">blog</a>
+            </li>
+            <li>
+              <a id="hLink" href="#works">works</a>
+            </li>
+            <li>
+              <a id="hLink" href="#contact">contact</a>
+            </li>
+          </ul>
+        </div> -->
+    </nav>
+
+    <!-- actual blog -->
+    <div class="bg-white py-24 sm:py-32">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+          <div class="mx-auto max-w-2xl lg:mx-0">
+            <h2 class="text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">Hello there</h2>
+            <p class="mt-2 text-lg/8 text-gray-600">This is the place where I dump all sorts of random stuff that isn't cs related.</p>
+          </div>
+          <div class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+            <article class="flex max-w-xl flex-col items-start justify-between">
+              <div class="flex items-center gap-x-4 text-xs">
+                <time datetime="2020-03-16" class="text-gray-500">Dec 11, 2024</time>
+                <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">Coffee</a>
+              </div>
+              <div class="group relative">
+                <h3 class="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600">
+                  <a href="#">
+                    <span class="absolute inset-0"></span>
+                    Boost your caffeine intake
+                  </a>
+                </h3>
+                <p class="mt-5 line-clamp-3 text-sm/6 text-gray-600">My favorite drink from starbucks is the iced brown sugar oatmilk shaken espresso with peppermint chocolate cold foam. Here's why...</p>
+              </div>
+              <div class="relative mt-8 flex items-center gap-x-4">
+                <img src="/images/logo.png" alt="" class="size-10 rounded-full bg-gray-50">
+                <div class="text-sm/6">
+                  <p class="font-semibold text-gray-900">
+                    <a href="#">
+                      <span class="absolute inset-0"></span>
+                      Vicky Ye
+                    </a>
+                  </p>
+                  <p class="text-gray-600">Some sort of tag</p>
+                </div>
+              </div>
+            </article>
+      
+            <!-- More posts... -->
+          </div>
+        </div>
+      </div>    
+</body>
+</html>

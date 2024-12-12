@@ -1,0 +1,20 @@
+<body>
+    <section>
+        <div class="rectangle rect1"></div>
+        <div class="rectangle rect2"></div>
+        <div class="rectangle rect3"></div>
+        <div class="rectangle rect4"></div>
+    </section>
+
+    <div class="scroll-to-top" onclick="scrollToTop()"></div>
+
+    <div class="name first-name">Vicky</div>
+    <div class="name last-name">Ye</div>
+
+    <div class="image-container">
+        <img src="website_vicky.PNG" alt="pfp" class="align-right">
+    </div>
+
+    <div class="horizontal-strip"></div>
+
+</body>
