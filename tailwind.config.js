@@ -12,7 +12,7 @@ module.exports = {
         slideloopleft1: 'slideloopleft 10s linear infinite',
         slideloopleft2: 'slideloopleft 14s linear infinite',
         slideloopright1: 'slideloopright 12s linear infinite',
-        slideloopright2: 'slideloopright 16s linear infinite'
+        slideloopright2: 'slideloopright 16s linear infinite',
       },
       keyframes: {
         slideinright: {
@@ -38,7 +38,7 @@ module.exports = {
       },
       height: {
         '1/8': '12.5%'
-      }
+      },
     },
     colors: {
       'light-orange-10'       : '#ffd36b',
@@ -57,9 +57,10 @@ module.exports = {
       'rectangle-orange2'     : '#ffa530',
       'rectangle-orange3'     : '#fff7c7',
       'rectangle-orange4'     : '#ffd36b',
-      'linkedin-blue'         : '#0077b5'
+      'linkedin-blue'         : '#0077b5',
+      'uw-purple'             : '#f2baff'
     }
   },
-  plugins: [],
+  plugins: []
 }
 
