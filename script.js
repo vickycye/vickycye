@@ -29,5 +29,18 @@ const observer = new IntersectionObserver(
     { threshold: 0.1 } // Trigger when 10% of the element is visible
 );
 
+const observer2 = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
+            if(entry.isIntersecting) {
+                entry.target.classList.remove('opacity-0');
+                entry.target.classList.add('opacity-100', 'animate-fadeOut')
+            }
+        })
+    }
+)
+
 const target = document.getElementById('animate-me');
+const target2 = document.getElementById('about-me')
 observer.observe(target);
+observer2.observe(target2);
