@@ -16,8 +16,8 @@ function scrollToTop() {
     });
 }       
 
-// Observing Animate on Scroll
-const observer = new IntersectionObserver(
+// slide in observe
+const slideobserve = new IntersectionObserver(
     (entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
@@ -29,7 +29,8 @@ const observer = new IntersectionObserver(
     { threshold: 0.1 } // Trigger when 10% of the element is visible
 );
 
-const observer2 = new IntersectionObserver(
+// fade in observe
+const fadeobserve = new IntersectionObserver(
     (entries) => {
         entries.forEach((entry) => {
             if(entry.isIntersecting) {
@@ -41,6 +42,13 @@ const observer2 = new IntersectionObserver(
 )
 
 const target = document.getElementById('animate-me');
-const target2 = document.getElementById('about-me')
-observer.observe(target);
-observer2.observe(target2);
+const target2 = document.getElementById('about-me');
+const project = document.getElementById('project-title');
+const moreAboutMe = document.getElementById('more-info-title');
+const favSongs = document.getElementById('fav-songs');
+
+slideobserve.observe(target);
+fadeobserve.observe(target2);
+slideobserve.observe(project);
+slideobserve.observe(moreAboutMe);
+slideobserve.observe(favSongs);

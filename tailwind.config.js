@@ -58,7 +58,8 @@ module.exports = {
       'rectangle-orange3'     : '#fff7c7',
       'rectangle-orange4'     : '#ffd36b',
       'linkedin-blue'         : '#0077b5',
-      'uw-purple'             : '#f2baff'
+      'uw-purple'             : '#f2baff',
+      'lighter-gray'          : '#757575'
     }
   },
   plugins: []
