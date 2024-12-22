@@ -1289,15 +1289,6 @@ video {
   border-bottom-left-radius: 1.5rem;
 }
 
-.border-t {
-  border-top-width: 1px;
-}
-
-.border-off-white {
-  --tw-border-opacity: 1;
-  border-color: rgb(230 230 230 / var(--tw-border-opacity, 1));
-}
-
 .bg-cream {
   --tw-bg-opacity: 1;
   background-color: rgb(240 230 204 / var(--tw-bg-opacity, 1));
