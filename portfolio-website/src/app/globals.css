@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0a0a;
+  --foreground: #ededed;
 }
 
 @theme inline {
@@ -14,8 +14,26 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
+    /* base theme variables */
     --background: #0a0a0a;
     --foreground: #ededed;
+
+    /* custom colors */
+    --discord-gray: #313338;
+    --discord-lighter-gray: #404249;
+    --cream: #F5F5F5;
+    --off-white: #F8F9FA;
+    --solid-orange-10: #FFB366;
+    --light-orange-10: #FFA64D;
+    --dark-orange: #FF8000;
+    --pinkish-red: #FF6B6B;
+    --rectangle-orange1: #FFB366;
+    --rectangle-orange2: #FFA64D;
+    --rectangle-orange3: #FF8C33;
+    --rectangle-orange4: #FF7300;
+    --uw-purple: #4B2E83;
+    --linkedin-blue: #0077B5;
+    --lighter-ish-gray: #A8A8A8;
   }
 }
 
@@ -43,6 +61,62 @@ html {
   100% {
     opacity: 1;
   }
+}
+
+/* Animations for sliding elements */
+@keyframes slideloopleft1 {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes slideloopright1 {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes slideloopleft2 {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes slideloopright2 {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes slideinrighttitle {
+  0% { transform: translateX(100%); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideinleftimage {
+  0% { transform: translateX(-100%); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+/* Utility classes for animations */
+.animate-slideloopleft1 {
+  animation: slideloopleft1 15s linear infinite;
+}
+
+.animate-slideloopright1 {
+  animation: slideloopright1 15s linear infinite;
+}
+
+.animate-slideloopleft2 {
+  animation: slideloopleft2 15s linear infinite;
+}
+
+.animate-slideloopright2 {
+  animation: slideloopright2 15s linear infinite;
+}
+
+.animate-slideinrighttitle {
+  animation: slideinrighttitle 1s forwards;
+}
+
+.animate-slideinleftimage {
+  animation: slideinleftimage 1s forwards;
 }
 
 /* Fix for the height of the hero section on mobile */
