@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-// Missing import statements
+// Component imports
 import { Navbar } from "@/components/Navbar";
+import { ScrollToTop } from "@/components/ScrollToTop";
+import { Footer } from "@/components/Footer";
 
 
 const geistSans = Geist({
@@ -27,7 +29,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth"> {/* Smooth scrolling */}
+    <html lang="en" className="scroll-smooth">
       <body className="overscroll-x-none overscroll-y-none">
         <Navbar />
         <main>{children}</main>
