@@ -52,7 +52,7 @@ export const AboutMe = () => {
               </h2>
               <p className="text-[var(--cream)]">
                 Hi! I am an undergraduate student studying <span className="font-bold text-[var(--solid-orange-10)]">Computer Science</span> at 
-                the <span className="font-bold text-[var(--mauve)]">University of Washington's Paul Allen School for CSE</span>, 
+                the <span className="font-bold text-[var(--mauve)]">University of Washington&apos;s Paul Allen School for CSE</span>, 
                 passionately pursuing a career in computer vision and artificial intelligence, with a focus on <span className="font-bold text-[var(--light-orange-10)]">image and video generation</span>. 
                 I am dedicated to contributing to the rapidly expanding field of generative AI, particularly in creating hyperrealistic 
                 images and cinematic-like videos. My approach emphasizes sourcing data from safe, ethical places, ensuring compliance with copyright restrictions. 

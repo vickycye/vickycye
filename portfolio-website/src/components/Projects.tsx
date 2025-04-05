@@ -20,13 +20,16 @@ export const Projects = () => {
       { threshold: 0.1 }
     );
 
-    if (projectTitleRef.current) {
-      observer.observe(projectTitleRef.current);
+    const currentRef = projectTitleRef.current;
+
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (projectTitleRef.current) {
-        observer.unobserve(projectTitleRef.current);
+      // Use the stored value in the cleanup function
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, []);
@@ -49,7 +52,7 @@ export const Projects = () => {
               <div className="px-8 pb-2 pt-6 sm:px-10 sm:pb-0 sm:pt-10">
                 <p className="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">Machine Learning Analysis & Data Visualization </p>
                 <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
-                  As an <span className="font-semibold text-[var(--dark-orange)]">Machine Learning Research Intern</span> in the University of Toronto's Department of Industrial and Mechanical Engineering, 
+                  As an <span className="font-semibold text-[var(--dark-orange)]">Machine Learning Research Intern</span> in the University of Toronto&apos;s Department of Industrial and Mechanical Engineering, 
                   I investigated factors of depression that best predict the eﬃcacy of antidepressant drug interventions. Performed data analysis and visualization for the ML models on clinical trial data, with the use of Scikit-Learn, Pandas, Matplotlib,
                   and Seaborn under the guidance of Dr. Martin Katzmann and Prof. Lu Wang. Communicated progress effectively with stakeholders at the S.T.A.R.T. Clinic for Mood & Anxiety Disorders in Toronto.
                 </p> 

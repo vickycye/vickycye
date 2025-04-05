@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 // Component Imports
 import { Hero } from '@/components/Hero';
 import { AboutMe } from '@/components/AboutMe';
