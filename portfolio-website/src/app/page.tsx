@@ -4,6 +4,8 @@ import Image from "next/image";
 import { Hero } from '@/components/Hero';
 import { AboutMe } from '@/components/AboutMe';
 import { Projects } from '@/components/Projects';
+import { InspirationalQuote } from '@/components/InspirationalQuote';
+// import { Quote } from "lucide-react";
 
 export default function Home() {
   return (
@@ -11,6 +13,7 @@ export default function Home() {
       <Hero />
       <AboutMe />
       <Projects />
+      <InspirationalQuote />
     </>
   );
 }

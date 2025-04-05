@@ -31,7 +31,7 @@ export const Navbar = () => {
     }, [menuOpen]);
 
     return (
-        <nav className="w-full fixed top-0 bg-white z-50 dark:bg-discord-lighter-gray">
+        <nav className="w-full fixed top-0 bg-[var(--palette-black)] z-50 dark:bg-[var(--palette-black)]">
         <div className="container mx-auto py-5 flex items-center justify-between">
             <div className="flex items-center gap-2">
             <Link href="/">
@@ -43,33 +43,33 @@ export const Navbar = () => {
                 height={32} 
                 />
             </Link>
-            <span className="text-2xl font-bold text-slate-800 dark:text-white"></span>
+            <span className="text-2xl font-bold text-white dark:text-white"></span>
             </div>
-            <ul className="hidden md:flex space-x-20 text-white dark:text-gray-100 font-bold text-sm uppercase">
-            <li className="hover:text-light-orange-10">
-                <Link href="/#about">About Me</Link>
-            </li>
-            <li className="hover:text-light-orange-10">
-                <Link href="/blog">Blog</Link>
-            </li>
-            <li className="hover:text-light-orange-10">
-                <Link href="/#personal-projects">Projects</Link>
-            </li>
-            <li className="hover:text-light-orange-10">
-                <Link href="/funstuff">Fun Stuff!</Link>
-            </li>
-            <li className="hover:text-light-orange-10">
-                <Link href="/contact">Contact</Link>
-            </li>
-            </ul>
+                <ul className="hidden md:flex space-x-20 text-white dark:text-[var(--lighter-ish-gray)] font-bold text-sm uppercase">
+                    <li className="hover:text-[var(--palette-blood-orange)]">
+                        <Link href="/#about">About Me</Link>
+                    </li>
+                    <li className="hover:text-[var(--palette-blood-orange)]">
+                        <Link href="/blog">Blog</Link>
+                    </li>
+                    <li className="hover:text-[var(--palette-blood-orange)]">
+                        <Link href="/#personal-projects">Projects</Link>
+                    </li>
+                    <li className="hover:text-[var(--palette-blood-orange)]">
+                        <Link href="/funstuff">Fun Stuff!</Link>
+                    </li>
+                    <li className="hover:text-[var(--palette-blood-orange)]">
+                        <Link href="/contact">Contact</Link>
+                    </li>
+                </ul>
             <div 
-            id="hamburger" 
-            className="space-y-1 md:hidden cursor-pointer z-20"
-            onClick={toggleMenu}
-            >
-            <div className="w-6 h-0.5 bg-light-orange-10"></div>
-            <div className="w-6 h-0.5 bg-light-orange-10"></div>
-            <div className="w-6 h-0.5 bg-light-orange-10"></div>
+                id="hamburger" 
+                className="space-y-1 md:hidden cursor-pointer z-20"
+                onClick={toggleMenu}
+                >
+                <div className="w-6 h-0.5 bg-[var(--palette-blood-orange)]"></div>
+                <div className="w-6 h-0.5 bg-[var(--palette-blood-orange)]"></div>
+                <div className="w-6 h-0.5 bg-[var(--palette-blood-orange)]"></div>
             </div>
             <ul 
             id="menu"

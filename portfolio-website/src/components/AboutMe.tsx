@@ -31,11 +31,11 @@ export const AboutMe = () => {
   }, []);
 
   return (
-    <div id="about" className="relative bg-discord-gray overflow-hidden">
+    <div id="about" className="relative bg-[var(--dark-black)] overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        <div className="relative pb-8 bg-discord-gray sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
+        <div className="relative pb-8 bg-[var(--dark-black)] sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
           <svg 
-            className="z-10 hidden lg:block absolute -right-20 inset-y-0 h-full w-48 text-light-orange-10 transform translate-x-1/2"
+            className="z-10 hidden lg:block absolute -right-20 inset-y-0 h-full w-48 text-[var(--light-orange-10)] transform translate-x-1/2"
             fill="currentColor" 
             viewBox="0 0 100 100" 
             preserveAspectRatio="none" 
@@ -47,13 +47,13 @@ export const AboutMe = () => {
 
           <main className="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
             <div id="about-me" ref={aboutMeRef} className="opacity-0 transition-opacity duration-1000 sm:text-center lg:text-left">
-              <h2 className="my-6 text-2xl tracking-tight font-extrabold text-cream sm:text-3xl md:text-4xl">
+              <h2 className="my-6 text-2xl tracking-tight font-extrabold text-[var(--cream)] sm:text-3xl md:text-4xl">
                 About me
               </h2>
-              <p className="text-cream">
-                Hi! I am an undergraduate student studying <span className="font-bold text-solid-orange-10">Computer Science</span> at 
-                the <span className="font-bold text-uw-purple">University of Washington's Paul Allen School for CSE</span>, 
-                passionately pursuing a career in computer vision and artificial intelligence, with a focus on <span className="font-bold text-light-orange-10">image and video generation</span>. 
+              <p className="text-[var(--cream)]">
+                Hi! I am an undergraduate student studying <span className="font-bold text-[var(--solid-orange-10)]">Computer Science</span> at 
+                the <span className="font-bold text-[var(--mauve)]">University of Washington's Paul Allen School for CSE</span>, 
+                passionately pursuing a career in computer vision and artificial intelligence, with a focus on <span className="font-bold text-[var(--light-orange-10)]">image and video generation</span>. 
                 I am dedicated to contributing to the rapidly expanding field of generative AI, particularly in creating hyperrealistic 
                 images and cinematic-like videos. My approach emphasizes sourcing data from safe, ethical places, ensuring compliance with copyright restrictions. 
                 Through innovative research and development, I aim to advance the boundaries of what is possible in generative AI while 
