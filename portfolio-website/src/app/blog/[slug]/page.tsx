@@ -3,24 +3,25 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Metadata } from 'next';
 
-// Use proper Next.js types for page props
-type Props = {
-  params: {
-    slug: string;
-  };
-  searchParams?: { [key: string]: string | string[] | undefined };
-};
+interface PageParams {
+  slug: string;
+}
   
 export async function generateStaticParams() {
-    const slugs = getAllPostSlugs();
-    return slugs.map(({ slug }) => ({
-      slug: slug
-    }));
+  const slugs = getAllPostSlugs();
+  return slugs.map(({ slug }) => ({
+    slug: slug
+  }));
 }
 
-// Optional: Dynamic metadata generation
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const post = await getPostData(params.slug);
+export async function generateMetadata({ 
+  params 
+}: { 
+  params: PageParams 
+}): Promise<Metadata> {
+  // Await the params before accessing slug
+  const resolvedParams = await params;
+  const post = await getPostData(resolvedParams.slug);
   
   return {
     title: post.title,
@@ -98,8 +99,14 @@ function AuthorInfo({ author }: { author: { name: string; image?: string; bio?: 
 }
   
 // Page component with correct props type
-export default async function BlogPost({ params }: Props) {
-  const { slug } = params;
+export default async function BlogPost({ 
+  params 
+}: { 
+  params: PageParams
+}) {
+  // Await the params before accessing slug
+  const resolvedParams = await params;
+  const { slug } = resolvedParams;
   const post = await getPostData(slug);
   
   // Default author info if not specified in markdown frontmatter
