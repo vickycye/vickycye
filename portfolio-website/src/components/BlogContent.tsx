@@ -12,7 +12,7 @@ export default function BlogContent({
   initialPosts: PostData[], 
   allTags: string[] 
 }) {
-  // Initialize with null to prevent hydration mismatch
+  // Initialize with default tag to prevent hydration mismatch
   const [selectedTag, setSelectedTag] = useState<string>('all');
   const [filteredPosts, setFilteredPosts] = useState<PostData[]>([]);
   const [isClient, setIsClient] = useState(false);
@@ -37,6 +37,13 @@ export default function BlogContent({
     }
   }, [selectedTag, initialPosts, isClient]);
 
+  // Handle tag selection explicitly
+  const handleTagChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const newTag = e.target.value;
+    console.log('Selected new tag:', newTag);
+    setSelectedTag(newTag);
+  };
+
   // Helper function to format dates consistently
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
@@ -51,18 +58,16 @@ export default function BlogContent({
   return (
     <div className="max-w-4xl mx-auto py-8 px-4">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-8">
-        <h1 className="text-3xl font-bold">Blog</h1>
-        
-        {/* Tag filter dropdown */}
-        <div className="mt-4 sm:mt-0">
-          <label htmlFor="tag-filter" className="text-[var(--cream)] mr-2">
+        {/* Tag filter dropdown - Improved for better cross-device compatibility */}
+        <div className="inline-block z-10 mt-16 sm:mt-16">
+          <label htmlFor="tag-filter" className="inline-block text-[var(--cream)] mr-2 mb-2">
             Filter by tag:
           </label>
           <select
             id="tag-filter"
             value={selectedTag}
             onChange={(e) => setSelectedTag(e.target.value)}
-            className="bg-[var(--discord-lighter-gray)] text-[var(--cream)] py-2 px-3 rounded border border-[var(--solid-orange-10)] focus:outline-none focus:ring-2 focus:ring-[var(--solid-orange-10)]"
+            className="block w-full sm:w-auto bg-[var(--discord-lighter-gray)] text-[var(--cream)] py-2 px-3 rounded border border-[var(--solid-orange-10)] focus:outline-none focus:ring-2 focus:ring-[var(--solid-orange-10)] cursor-pointer"
           >
             <option value="all">All Posts</option>
             {allTags.map(tag => (
@@ -73,6 +78,21 @@ export default function BlogContent({
           </select>
         </div>
       </div>
+
+      {/* Current filter indicator */}
+      {selectedTag !== 'all' && (
+        <div className="mb-6 p-2 bg-[var(--discord-lighter-gray)] rounded-md">
+          <p className="text-[var(--cream)]">
+            Showing posts tagged with: <span className="font-semibold text-[var(--solid-orange-10)]">#{selectedTag}</span>
+            {' '}<button 
+              onClick={() => setSelectedTag('all')} 
+              className="text-[var(--cream)] underline hover:text-[var(--solid-orange-10)]"
+            >
+              Clear filter
+            </button>
+          </p>
+        </div>
+      )}
       
       {/* List of posts */}
       <div className="space-y-8">
