@@ -66,6 +66,7 @@ Let's denote:
 * $\hat{f}(x)$ as our model's prediction
 
 The expected squared error at a point $x$ is:
+
 $$
 \begin{aligned}
 E[(y - \hat{f}(x))^2] &= E[(y - f(x) + f(x) - \hat{f}(x))^2] \\

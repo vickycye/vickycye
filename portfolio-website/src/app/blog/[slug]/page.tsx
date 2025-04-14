@@ -17,9 +17,8 @@ export async function generateStaticParams() {
 export async function generateMetadata({ 
   params 
 }: { 
-  params: PageParams 
+  params: Promise<PageParams> 
 }): Promise<Metadata> {
-  // Await the params before accessing slug
   const resolvedParams = await params;
   const post = await getPostData(resolvedParams.slug);
   
@@ -102,9 +101,8 @@ function AuthorInfo({ author }: { author: { name: string; image?: string; bio?: 
 export default async function BlogPost({ 
   params 
 }: { 
-  params: PageParams
+  params: Promise<PageParams>
 }) {
-  // Await the params before accessing slug
   const resolvedParams = await params;
   const { slug } = resolvedParams;
   const post = await getPostData(slug);
