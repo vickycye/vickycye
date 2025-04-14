@@ -1,19 +1,50 @@
 import { getAllPostSlugs, getPostData } from '../../../lib/markdown';
 import Image from 'next/image';
 import Link from 'next/link';
-import { User } from 'lucide-react';
+import { Metadata } from 'next';
 
-interface BlogPostParams {
-    params: {
-      slug: string;
-    };
-}
+// Use proper Next.js types for page props
+type Props = {
+  params: { slug: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
   
 export async function generateStaticParams() {
     const slugs = getAllPostSlugs();
     return slugs.map(({ slug }) => ({
       slug: slug
     }));
+}
+
+// Optional: Dynamic metadata generation
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const post = await getPostData(params.slug);
+  
+  return {
+    title: post.title,
+    description: post.excerpt || `Read more about ${post.title}`
+  };
+}
+
+// Simple SVG user icon component
+function UserIcon() {
+  return (
+    <svg 
+      xmlns="http://www.w3.org/2000/svg" 
+      width="30" 
+      height="30" 
+      viewBox="0 0 24 24" 
+      fill="none" 
+      stroke="currentColor" 
+      strokeWidth="2" 
+      strokeLinecap="round" 
+      strokeLinejoin="round"
+      className="text-[var(--cream)]"
+    >
+      <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+      <circle cx="12" cy="7" r="4"></circle>
+    </svg>
+  );
 }
 
 // Component for post tags
@@ -35,6 +66,7 @@ function PostTags({ tags }: { tags: string[] }) {
   );
 }
 
+// Component for author info
 function AuthorInfo({ author }: { author: { name: string; image?: string; bio?: string } }) {
   return (
     <div className="flex items-start space-x-4 p-5 bg-[var(--discord-lighter-gray)] rounded-lg mt-8 mb-4">
@@ -49,7 +81,7 @@ function AuthorInfo({ author }: { author: { name: string; image?: string; bio?: 
           />
         ) : (
           <div className="w-[60px] h-[60px] rounded-full bg-[var(--palette-blood-orange)] flex items-center justify-center">
-            <User size={30} className="text-[var(--cream)]" />
+            <UserIcon />
           </div>
         )}
       </div>
@@ -63,14 +95,15 @@ function AuthorInfo({ author }: { author: { name: string; image?: string; bio?: 
   );
 }
   
-export default async function BlogPost({ params }: BlogPostParams) {
+// Page component with correct props type
+export default async function BlogPost({ params }: Props) {
   const { slug } = params;
   const post = await getPostData(slug);
   
   // Default author info if not specified in markdown frontmatter
   const author = post.author || {
     name: "Vicky Ye",
-    bio: "CS Kid"
+    bio: "Software developer and math enthusiast sharing thoughts about coding, life, and everything in between."
   };
   
   // Tags from the post frontmatter

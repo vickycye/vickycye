@@ -1,30 +1,37 @@
-import Link from 'next/link';
-import { getAllPosts } from '../../lib/markdown';
+// app/blog/page.tsx
+import BlogContent from '@/components/BlogContent';
+import { getAllPosts, getAllTags } from '../../lib/markdown.server';
+import { Suspense } from 'react';
 
-
-export default function BlogPage() {
-  const posts = getAllPosts();
+// Loading state
+function LoadingBlog() {
   return (
     <div className="max-w-4xl mx-auto py-8 px-4">
-      <h1 className="text-3xl font-bold mb-8">Blog</h1>
-      <div className="space-y-8">
-        {posts.map((post) => (
-          <article key={post.slug} className="border-b pb-8">
-            <Link href={`/blog/${post.slug}`}>
-              <h2 className="text-2xl font-semibold hover:underline">{post.title}</h2>
-            </Link>
-            <time className="text-gray-500 block mt-1">
-              {new Date(post.date).toLocaleDateString()}
-            </time>
-            {post.excerpt && (
-              <p className="mt-3">{post.excerpt}</p>
-            )}
-            <Link href={`/blog/${post.slug}`} className="text-blue-600 hover:underline inline-block mt-2">
-              Read more
-            </Link>
-          </article>
+      <div className="animate-pulse">
+        <div className="h-8 w-40 bg-[var(--discord-lighter-gray)] rounded mb-8"></div>
+        {[1, 2, 3].map((i) => (
+          <div key={i} className="mb-8 pb-8 border-b border-[var(--discord-lighter-gray)]">
+            <div className="h-6 w-3/4 bg-[var(--discord-lighter-gray)] rounded mb-2"></div>
+            <div className="h-4 w-20 bg-[var(--discord-lighter-gray)] rounded mb-4"></div>
+            <div className="h-4 w-full bg-[var(--discord-lighter-gray)] rounded mb-2"></div>
+            <div className="h-4 w-2/3 bg-[var(--discord-lighter-gray)] rounded"></div>
+          </div>
         ))}
       </div>
     </div>
+  );
+}
+
+// This is a Server Component
+export default async function BlogPage() {
+  // Fetch data on the server
+  const allPosts = getAllPosts();
+  const allTags = getAllTags();
+  
+  // Wrap with Suspense to handle loading state
+  return (
+    <Suspense fallback={<LoadingBlog />}>
+      <BlogContent initialPosts={allPosts} allTags={allTags} />
+    </Suspense>
   );
 }

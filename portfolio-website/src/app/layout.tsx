@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import KatexStylesheet from '@/components/KatexStyleSheet';
+import PrismStylesheet from '@/components/PrismStyleSheet';
 import "./globals.css";
 
 // Component imports
@@ -22,6 +23,7 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <head>
         <KatexStylesheet />
+        <PrismStylesheet />
       </head>
       <body className="overscroll-x-none overscroll-y-none">
         <Navbar />

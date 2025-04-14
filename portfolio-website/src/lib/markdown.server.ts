@@ -1,32 +1,22 @@
-// lib/markdown.ts
+// lib/markdown.server.ts
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
-// import html from 'remark-html';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 import remarkRehype from 'remark-rehype';
 import rehypeStringify from 'rehype-stringify';
 import remarkGfm from 'remark-gfm';
+import rehypePrism from 'rehype-prism';
+import rehypeSlug from 'rehype-slug';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import { PostData, Author } from './types';
+
+// This file is for server-only operations
+// It will not be bundled with client-side code
 
 const postsDirectory = path.join(process.cwd(), 'content/blog');
-
-interface Author {
-  name: string;
-  image?: string;
-  bio?: string;
-}
-
-export interface PostData {
-  slug: string;
-  title: string;
-  date: string;
-  excerpt?: string;
-  author?: Author;
-  tags?: string[];
-  contentHtml?: string;
-}
 
 export function getAllPostSlugs() {
   const fileNames = fs.readdirSync(postsDirectory);
@@ -103,11 +93,22 @@ export async function getPostData(slug: string): Promise<PostData & { contentHtm
 
   // Use remark to convert markdown into HTML string
   const processedContent = await remark()
-    .use(remarkGfm) // GitHub Flavored Markdown
-    .use(remarkMath) // Parse math expressions
-    .use(remarkRehype, { allowDangerousHtml: true }) // Convert to rehype AST
-    .use(rehypeKatex) // Process math expressions with KaTeX
-    .use(rehypeStringify, { allowDangerousHtml: true }) // Convert to HTML string
+    .use(remarkGfm)
+    .use(remarkMath)
+    .use(remarkRehype, { allowDangerousHtml: true })
+    .use(rehypeSlug)  // Add IDs to headings
+    .use(rehypeAutolinkHeadings)  // Add links to headings
+    .use(rehypePrism, {
+        ignoreMissing: true,
+        showLineNumbers: true,
+        lineNumbersGlobal: true,
+        aliases: {
+          js: 'javascript',
+          ts: 'typescript'
+        }
+      })
+    .use(rehypeKatex)
+    .use(rehypeStringify, { allowDangerousHtml: true })
     .process(matterResult.content);
     
   const contentHtml = processedContent.toString();

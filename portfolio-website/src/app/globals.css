@@ -260,3 +260,100 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.1em !important;
   color: var(--cream) !important;
 }
+
+/* Code block styles */
+pre {
+  position: relative;
+  overflow: auto;
+  border-radius: 0.5rem;
+  background-color: #282829; /* Black background */
+  margin: 1.5rem 0;
+  padding: 1.0rem 0;
+  font-family: var(--font-mono, monospace);
+  counter-reset: line;
+}
+
+pre code {
+  display: block;
+  padding: 0 1rem 0 4rem; /* Space for line numbers */
+  color: #9e9e9e;
+  background-color: transparent;
+  line-height: 1.5;
+}
+
+/* Line numbers */
+pre code .line {
+  display: block;
+  position: relative;
+}
+
+pre code .line::before {
+  counter-increment: line;
+  content: counter(line);
+  position: absolute;
+  left: -3rem;
+  width: 2.5rem;
+  color: #ffffff; /* Gray color for line numbers */
+  text-align: right;
+  user-select: none;
+}
+
+/* Language indicator */
+pre::after {
+  content: attr(data-language);
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: var(--solid-orange-10);
+  color: #000000;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 0.25rem 0.75rem;
+  border-bottom-left-radius: 0.5rem;
+  text-transform: uppercase;
+}
+
+/* Language-specific styling */
+pre[data-language="javascript"]::after,
+pre[data-language="js"]::after { content: "javascript"; }
+
+pre[data-language="typescript"]::after,
+pre[data-language="ts"]::after { content: "typescript"; }
+
+pre[data-language="python"]::after { content: "python"; }
+
+pre[data-language="java"]::after { content: "java"; }
+
+pre[data-language="html"]::after { content: "html"; }
+
+pre[data-language="css"]::after { content: "css"; }
+
+pre[data-language="bash"]::after,
+pre[data-language="shell"]::after { content: "bash"; }
+
+pre[data-language="json"]::after { content: "json"; }
+
+/* Syntax highlighting colors for different token types */
+.token.comment { color: #6a9955; } /* Green */
+.token.string { color: #ce9178; } /* Coral */
+.token.number { color: #b5cea8; } /* Light green */
+.token.keyword { color: #569cd6; } /* Blue */
+.token.operator { color: #d4d4d4; } /* Light gray */
+.token.function { color: #dcdcaa; } /* Yellow */
+.token.class-name { color: #4ec9b0; } /* Teal */
+.token.property { color: #9cdcfe; } /* Light blue */
+.token.tag { color: #569cd6; } /* Blue */
+.token.attr-name { color: #9cdcfe; } /* Light blue */
+.token.attr-value { color: #ce9178; } /* Coral */
+.token.punctuation { color: #d4d4d4; } /* Light gray */
+.token.boolean { color: #569cd6; } /* Blue */
+.token.constant { color: #4fc1ff; } /* Bright blue */
+.token.regex { color: #d16969; } /* Red */
+.token.important { color: #ff8c00; } /* Orange */
+
+/* Special highlighting */
+.token.important,
+.token.bold { font-weight: bold; }
+.token.italic { font-style: italic; }
+.token.deleted { color: #ff5252; background-color: rgba(255, 0, 0, 0.1); }
+.token.inserted { color: #a6e22e; background-color: rgba(0, 255, 0, 0.1); }
