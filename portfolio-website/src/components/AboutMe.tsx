@@ -7,6 +7,8 @@ export const AboutMe = () => {
   const aboutMeRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const node = aboutMeRef.current;
+    if (!node) return;
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -18,15 +20,10 @@ export const AboutMe = () => {
       },
       { threshold: 0.1 }
     );
-
-    if (aboutMeRef.current) {
-      observer.observe(aboutMeRef.current);
-    }
+    observer.observe(node);
 
     return () => {
-      if (aboutMeRef.current) {
-        observer.unobserve(aboutMeRef.current);
-      }
+      observer.unobserve(node);
     };
   }, []);
 
