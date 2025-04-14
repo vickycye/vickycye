@@ -1,0 +1,59 @@
+---
+title: 'I Love Driving'
+date: '2025-04-11'
+excerpt: 'Something about driving'
+author:
+  name: 'Vicky Ye'
+  bio: 'Software developer, coffee enthusiast, and amateur astronomer'
+  image: '/images/author-avatar.jpg'
+tags: ['Web Development', 'Next.js', 'Markdown']
+---
+
+# Math on the Road: Where Driving Meets Equations
+Have you ever thought about how much mathematics is involved in your daily commute? As someone who loves both numbers and driving, I've found some fascinating connections between the two. Let's explore some interesting mathematical concepts that relate to driving, along with some fun facts about life on the road.
+
+## The Physics of Braking
+When you press your brake pedal, the physics can be described with a surprisingly elegant equation. The braking distance of a vehicle can be calculated using:
+$d = \frac{v^2}{2 \mu g}$ 
+Where:
+- $d$ is the braking distance in meters
+- $v$ is the initial velocity in m/s
+- $\mu$ is the coefficient of friction between the tires and road
+- $g$ is the acceleration due to gravity (approximately 9.8 $m/s^2$)
+
+This formula demonstrates that your stopping distance increases with the square of your speed - meaning that if you double your speed, your stopping distance quadruples!
+
+#### Fun Fact \#1: The Average Driver
+The average American driver spends about 17,600 minutes behind the wheel each year - that's equivalent to 293 hours, or about 12 full days!
+
+#### Calculating Fuel Economy
+Fuel efficiency can be expressed mathematically using the formula:
+$$\text{MPG} = \frac{\text{distance traveled}}{\text{gallons of fuel consumed}}$$
+
+But what's interesting is how this relates to the rate of fuel consumption. The relationship between miles per gallon (MPG) and gallons per mile (GPM) is:
+$$\text{GPM} = \frac{1}{\text{MPG}}​$$
+This inverse relationship creates a non-linear curve that explains why improving fuel efficiency from 10 MPG to 20 MPG saves more fuel over the same distance than improving from 30 MPG to 40 MPG.
+
+
+#### Fun Fact \#2: Traffic Lights
+The average driver will spend about 6 months of their life waiting at red lights. That's enough time to read about 60 novels!
+The Mathematics of Traffic Flow
+Traffic engineers use fluid dynamics to model traffic flow. One basic equation is:
+$$q = \rho \times v$$
+Where:
+- $q$ is the flow rate (vehicles per hour)
+- $\rho$ is the traffic density (vehicles per kilometer)
+- $v$ is the space-mean speed (kilometers per hour)
+
+This equation helps explain traffic jams - as density increases, drivers reduce their speed, eventually reaching a critical density where flow rate actually decreases.
+
+#### Fun Fact \#3: License Plates
+The first license plate in the United States was issued in Massachusetts in 1903. It was simply the number "1". If all 50 states used the same format for license plates with 3 letters followed by 4 digits, there would be $26^3 \times 10^4 = 17,576,000$ possible combinations per state!
+
+### Conclusion
+Next time you're stuck in traffic, perhaps contemplating these mathematical concepts can make the journey more interesting! From the physics of motion to the probability of finding a parking spot, driving is full of mathematical principles that shape our experience on the road.
+What mathematical aspects of driving have you noticed? Let me know in the comments below!
+
+---
+
+This is a test post to check LaTeX compatibility. All mathematical formulas should render properly if your blog's LaTeX support is correctly configured.

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import KatexStylesheet from '@/components/KatexStyleSheet';
 import "./globals.css";
 
 // Component imports
@@ -19,6 +20,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <KatexStylesheet />
+      </head>
       <body className="overscroll-x-none overscroll-y-none">
         <Navbar />
         <main>{children}</main>
