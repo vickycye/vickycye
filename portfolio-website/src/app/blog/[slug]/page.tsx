@@ -5,8 +5,10 @@ import { Metadata } from 'next';
 
 // Use proper Next.js types for page props
 type Props = {
-  params: { slug: string };
-  searchParams: { [key: string]: string | string[] | undefined };
+  params: {
+    slug: string;
+  };
+  searchParams?: { [key: string]: string | string[] | undefined };
 };
   
 export async function generateStaticParams() {
