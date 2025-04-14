@@ -37,13 +37,6 @@ export default function BlogContent({
     }
   }, [selectedTag, initialPosts, isClient]);
 
-  // Handle tag selection explicitly
-  const handleTagChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const newTag = e.target.value;
-    console.log('Selected new tag:', newTag);
-    setSelectedTag(newTag);
-  };
-
   // Helper function to format dates consistently
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
