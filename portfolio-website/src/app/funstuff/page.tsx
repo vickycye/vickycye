@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
+// import Link from 'next/link';
 
 // SpotifyEmbed component for better organization
 function SpotifyEmbed({ trackId, height = 152 }: { trackId: string; height?: number }) {
@@ -72,7 +72,7 @@ export default function FunStuff() {
               A Little Bit More About Me...
             </h2>
             <p className="mt-8 text-pretty text-lg font-medium text-[var(--off-white)] sm:text-xl/8 animate-fadeOut">
-              Other than that, in my free time: I enjoy learning languages on Duolingo, I play video games, and love listening to music. I'm also playing
+              Other than that, in my free time: I enjoy learning languages on Duolingo, I play video games, and love listening to music. I&apos;m also playing
               intramural ultimate frisbee at my university!
             </p>
           </div>
