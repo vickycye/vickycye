@@ -57,7 +57,7 @@ export function ResumeDownload() {
           {/* Modal */}
           <div className="bg-[var(--discord-gray)] rounded-lg shadow-xl p-6 max-w-sm w-full border border-[var(--discord-lighter-gray)]">
             <h3 className="text-xl font-semibold text-[var(--cream)] mb-4">Download Resume</h3>
-            <p className="text-[var(--cream)] mb-6">Would you like to download Vicky's resume?</p>
+            <p className="text-[var(--cream)] mb-6">Would you like to download Vicky&apos;s resume?</p>
             
             <div className="flex justify-end space-x-3">
               <button
