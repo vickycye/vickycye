@@ -11,7 +11,7 @@ import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Vicky Ye",
-  description: "Personal portfolio website of Vicky Ye",
+  description: "CS Undergrad @ University of Washington",
 };
 
 export default function RootLayout({
