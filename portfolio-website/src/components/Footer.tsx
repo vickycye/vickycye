@@ -1,6 +1,44 @@
-// import Link from 'next/link';
+'use client';
+import { useEffect, useCallback } from 'react';
+import { ResumeDownload } from './ResumeDownload';
+
+// TypeScript declaration for the global window object
+declare global {
+  interface Window {
+    copyEmail?: (event: React.MouseEvent, email: string) => void;
+  }
+}
 
 export const Footer = () => {
+  // Define the copyEmail function using useCallback
+  const copyEmail = useCallback((event: React.MouseEvent, email: string) => {
+    event.preventDefault();
+    navigator.clipboard.writeText(email).then(() => {
+      const message = document.getElementById('email-copied-message');
+      if (message) {
+        message.classList.remove('opacity-0');
+        message.classList.add('opacity-100');
+        
+        setTimeout(() => {
+          message.classList.remove('opacity-100');
+          message.classList.add('opacity-0');
+        }, 2000);
+      }
+    }).catch(err => {
+      console.error('Failed to copy: ', err);
+    });
+  }, []);
+
+  useEffect(() => {
+    // Add the function to the window object
+    window.copyEmail = copyEmail;
+    
+    // Cleanup function
+    return () => {
+      window.copyEmail = undefined;
+    };
+  }, [copyEmail]);
+
   return (
     <section className="bg-[var(--discord-gray)]">
       <div className="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
@@ -8,6 +46,25 @@ export const Footer = () => {
           {/* Additional footer links can be added here */}
         </nav>
         <div className="flex justify-center mt-8 space-x-6">
+          {/* Email with Copy */}
+          <div className="relative inline-block" id="email-container">
+            <a 
+              href="#" 
+              className="text-cream hover:text-[var(--solid-orange-10)]" 
+              onClick={(e) => copyEmail(e, 'vickyye@uw.edu')}
+              aria-label="Copy email address"
+            >
+              <svg className="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8l8 5 8-5v10zm-8-7L4 6h16l-8 5z" />
+              </svg>
+            </a>
+            <div 
+              id="email-copied-message" 
+              className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white px-2 py-1 rounded text-sm whitespace-nowrap opacity-0 transition-opacity"
+            >
+              Email copied!
+            </div>
+          </div>
           {/* Instagram */}
           <a href="https://www.instagram.com/vickyyeeeeeeeeezi/" className="text-cream hover:text-[var(--pinkish-red)]" target="_blank" rel="noopener noreferrer">
             <svg className="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
@@ -30,6 +87,8 @@ export const Footer = () => {
               </svg>
             </span>
           </a>
+          {/* Resume Download */}
+          <ResumeDownload />
         </div>
         <p className="mt-6 text-base leading-6 text-center text-light-orange-10 opacity-60">
           © {new Date().getFullYear()} Vicky Ye. All rights reserved.
