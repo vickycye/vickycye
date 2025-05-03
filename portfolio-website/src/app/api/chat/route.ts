@@ -46,7 +46,7 @@ export async function POST(request: Request) {
     // Format messages for the OpenAI API
     const formattedMessages = [
       { role: 'system', content: VICKY_SYSTEM_PROMPT },
-      ...userMessages.map((message: any) => ({
+      ...userMessages.map((message: { role: string; content: string }) => ({
         role: message.role,
         content: message.content,
       })),
