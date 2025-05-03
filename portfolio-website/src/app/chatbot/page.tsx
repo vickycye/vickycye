@@ -97,7 +97,7 @@ export default function ChatbotPage() {
         />
         <div>
           <h1 className="text-3xl font-bold">Chat with Vicky Bot</h1>
-          <p className="text-[var(--cream)] opacity-80">Ask me anything and I'll respond as my true, authentic self!</p>
+          <p className="text-[var(--cream)] opacity-80">Ask me anything and I&apos;ll respond as my true, authentic self!</p>
         </div>
       </div>
       
