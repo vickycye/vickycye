@@ -11,6 +11,19 @@ interface Message {
   content: string;
 }
 
+// Define offline responses for common questions
+const OFFLINE_RESPONSES: Record<string, string> = {
+    "contact": "you can contact me at vickyye@uw.edu or connect with me on linkedin at linkedin.com/in/vickycye",
+    "email": "my email is vickyye@uw.edu. feel free to reach out!",
+    "phone": "i prefer email communication. you can reach me at vickyye@uw.edu",
+    "linkedin": "connect with me on linkedin at linkedin.com/in/vickycye",
+    "github": "check out my projects on github: github.com/vickycye",
+    "location": "i'm based in Seattle, WA at the University of Washington",
+    "resume": "you can download my resume from the footer of my website, or email me for the latest version",
+    "help": "you can ask me about my contact info, projects, or blog topics! i'll do my best to respond like the real vicky would.",
+    "": "hey there! i'm Vicky bot. you can ask me about contact info, my projects, or my blog topics!"
+  };
+
 export default function ChatbotPage() {
   const [input, setInput] = useState('');
   const [messages, setMessages] = useState<Message[]>([
@@ -20,6 +33,8 @@ export default function ChatbotPage() {
     }
   ]);
   const [isLoading, setIsLoading] = useState(false);
+  const [hasInteracted, setHasInteracted] = useState(false);
+  const [surpriseShown, setSurpriseShown] = useState(false);
   
   // Add a ref for the chat container
   const chatContainerRef = useRef<HTMLDivElement>(null);
@@ -40,6 +55,35 @@ export default function ChatbotPage() {
     }
   }, [messages]);
 
+  // Function to check for offline responses
+  const getOfflineResponse = (input: string): string | null => {
+    // Convert input to lowercase for case-insensitive matching
+    const lowercaseInput = input.toLowerCase();
+    
+    // Check for keywords in the input
+    for (const [keyword, response] of Object.entries(OFFLINE_RESPONSES)) {
+      if (keyword && lowercaseInput.includes(keyword)) {
+        return response;
+      }
+    }
+    
+    // If no matches, return null to proceed with API call
+    return null;
+  };
+
+  // Function to handle the surprise message
+  const showSurpriseMessage = () => {
+    setTimeout(() => {
+      setMessages(prev => [...prev, { 
+        role: 'assistant', 
+        content: "Bet you didn't expect this to be in the contact page, did you? 😉" 
+      }]);
+      setSurpriseShown(true);
+    }, 2000); // Wait 2 seconds before showing the surprise message
+  };
+
+
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
@@ -50,38 +94,63 @@ export default function ChatbotPage() {
     setMessages(prev => [...prev, userMessage]);
     setInput('');
     setIsLoading(true);
-    
-    try {
-      // Send to API route
-      const response = await fetch('/api/chat', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          messages: [...messages, userMessage],
-        }),
-      });
-      
-      if (!response.ok) {
-        throw new Error('Failed to get response');
-      }
-      
-      const data = await response.json();
-      
-      // Add AI response to chat
-      setMessages(prev => [...prev, { 
-        role: 'assistant', 
-        content: data.message 
-      }]);
-    } catch (error) {
-      console.error('Error:', error);
-      setMessages(prev => [...prev, { 
-        role: 'assistant', 
-        content: "looks like vicky has ran out of creds, try again later :("
-      }]);
-    } finally {
-      setIsLoading(false);
+
+    // Check for offline responses first
+    const offlineResponse = getOfflineResponse(input);
+    if (offlineResponse) {
+        // Use offline response
+        setTimeout(() => {
+          setMessages(prev => [...prev, { 
+            role: 'assistant', 
+            content: offlineResponse 
+          }]);
+          setIsLoading(false);
+          
+          // Show surprise message after first interaction if not already shown
+          if (!hasInteracted && !surpriseShown) {
+            setHasInteracted(true);
+            showSurpriseMessage();
+          }
+        }, 800);
+    } else { // If not offline response, proceed with API call
+        try {
+        // Send to API route
+        const response = await fetch('/api/chat', {
+            method: 'POST',
+            headers: {
+            'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+            messages: [...messages, userMessage],
+            }),
+        });
+        
+        if (!response.ok) {
+            throw new Error('Failed to get response');
+        }
+        
+        const data = await response.json();
+        
+        // Add AI response to chat
+        setMessages(prev => [...prev, { 
+            role: 'assistant', 
+            content: data.message 
+        }]);
+        } catch (error) {
+        console.error('Error:', error);
+        setMessages(prev => [...prev, { 
+            role: 'assistant', 
+            content: "looks like i've run out of creds. try asking about basic contact info instead, or try again later :("
+        }]);
+
+        // Show surprise message after first API interaction if not already shown
+        if (!hasInteracted && !surpriseShown) {
+            setHasInteracted(true);
+            showSurpriseMessage();
+        }
+        } finally {
+        setIsLoading(false);
+        }
     }
   };
 
