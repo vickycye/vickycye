@@ -59,7 +59,7 @@ export const Navbar = () => {
                         <Link href="/funstuff">Fun Stuff!</Link>
                     </li>
                     <li className="hover:text-[var(--palette-blood-orange)]">
-                        <Link href="/contact">Contact</Link>
+                        <Link href="/chatbot">Contact</Link>
                     </li>
                 </ul>
             <div 
@@ -75,7 +75,7 @@ export const Navbar = () => {
             id="menu"
             className={`${
                 menuOpen ? 'block' : 'hidden'
-            } bg-indigo-900 absolute left-0 top-0 w-full p-10 rounded-b-3xl space-y-10 text-white text-center`}
+            } bg-[var(--palette-blood-orange)] absolute left-0 top-0 w-full p-10 rounded-b-3xl space-y-10 text-white text-center`}
             >
             <li>
                 <Link href="/#about" id="hLink" onClick={() => setMenuOpen(false)}>About Me</Link>
