@@ -76,7 +76,7 @@ export default function ChatbotPage() {
     setTimeout(() => {
       setMessages(prev => [...prev, { 
         role: 'assistant', 
-        content: "Bet you didn't expect this to be in the contact page, did you? 😉" 
+        content: "bet you didn't expect this to be in the contact page, did you? 😉" 
       }]);
       setSurpriseShown(true);
     }, 2000); // Wait 2 seconds before showing the surprise message
