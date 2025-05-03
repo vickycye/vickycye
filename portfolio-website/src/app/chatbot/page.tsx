@@ -16,7 +16,7 @@ export default function ChatbotPage() {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: 'assistant',
-      content: "sup! assuming i still have credits left, let&apos;s talk about something!"
+      content: "sup! assuming i still have credits left, lets talk about something!"
     }
   ]);
   const [isLoading, setIsLoading] = useState(false);
@@ -78,7 +78,7 @@ export default function ChatbotPage() {
       console.error('Error:', error);
       setMessages(prev => [...prev, { 
         role: 'assistant', 
-        content: "looks like vicky&apos;s ran out of creds, try again later :("
+        content: "looks like vicky has ran out of creds, try again later :("
       }]);
     } finally {
       setIsLoading(false);
