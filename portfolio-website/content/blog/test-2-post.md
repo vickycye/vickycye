@@ -1,5 +1,5 @@
 ---
-title: 'Bias and Variance Tradeoff'
+title: 'Test: Bias and Variance Tradeoff'
 date: '2025-04-14'
 excerpt: 'The bias-variance tradeoff is a fundamental concept in machine learning that helps us understand the balance between model complexity and generalization. When building predictive models, we aim to create algorithms...'
 author:
