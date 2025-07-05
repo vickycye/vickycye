@@ -1,6 +1,5 @@
 'use client';
 
-import { useState } from 'react';
 import { Comment as CommentType } from '../lib/types';
 
 interface CommentProps {
