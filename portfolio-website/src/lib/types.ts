@@ -16,3 +16,19 @@ export interface Author {
     tags?: string[];
     contentHtml?: string;
   }
+
+// Comment system types
+export interface Comment {
+  id: string;
+  postSlug: string;
+  author: string;
+  content: string;
+  createdAt: string;
+  parentId?: string; // For nested comments
+}
+
+export interface CommentFormData {
+  author: string;
+  content: string;
+  parentId?: string;
+}

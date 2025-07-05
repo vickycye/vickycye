@@ -2,6 +2,7 @@ import { getAllPostSlugs, getPostData } from '../../../lib/markdown';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Metadata } from 'next';
+import { Comments } from '../../../components/Comments';
 
 interface PageParams {
   slug: string;
@@ -137,6 +138,9 @@ export default async function BlogPost({
       />
       
       <AuthorInfo author={author} />
+      
+      {/* Comments Section */}
+      <Comments postSlug={slug} />
     </div>
   );
 }

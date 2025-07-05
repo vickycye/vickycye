@@ -12,6 +12,7 @@
     "deploy": "gh-pages -d build"
   },
   "dependencies": {
+    "@vercel/kv": "^3.0.0",
     "gray-matter": "^4.0.3",
     "katex": "^0.16.22",
     "lucide-react": "^0.488.0",
