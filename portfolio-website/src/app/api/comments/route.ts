@@ -11,7 +11,7 @@ export async function GET(request: NextRequest) {
   }
   
   try {
-    const comments = getCommentsByPostSlug(postSlug);
+    const comments = await getCommentsByPostSlug(postSlug);
     return NextResponse.json(comments);
   } catch (error) {
     console.error('Error fetching comments:', error);
@@ -33,7 +33,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Author and content are required' }, { status: 400 });
     }
     
-    const newComment = addComment({
+    const newComment = await addComment({
       postSlug,
       author: body.author,
       content: body.content,

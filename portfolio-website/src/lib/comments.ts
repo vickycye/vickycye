@@ -1,57 +1,34 @@
-import fs from 'fs';
-import path from 'path';
+import { kv } from '@vercel/kv';
 import { Comment } from './types';
 
-const COMMENTS_FILE = path.join(process.cwd(), 'data', 'comments.json');
-
-// Ensure data directory exists
-function ensureDataDirectory() {
-  const dataDir = path.dirname(COMMENTS_FILE);
-  if (!fs.existsSync(dataDir)) {
-    fs.mkdirSync(dataDir, { recursive: true });
-  }
-}
-
-// Read comments from file
-export function getComments(): Comment[] {
-  ensureDataDirectory();
-  
-  if (!fs.existsSync(COMMENTS_FILE)) {
-    return [];
-  }
-  
+// Get comments for a specific post
+export async function getCommentsByPostSlug(postSlug: string): Promise<Comment[]> {
   try {
-    const data = fs.readFileSync(COMMENTS_FILE, 'utf8');
-    return JSON.parse(data);
+    const comments = await kv.lrange(`comments:${postSlug}`, 0, -1);
+    return comments
+      .map(comment => JSON.parse(comment))
+      .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
   } catch (error) {
     console.error('Error reading comments:', error);
     return [];
   }
 }
 
-// Get comments for a specific post
-export function getCommentsByPostSlug(postSlug: string): Comment[] {
-  const comments = getComments();
-  return comments
-    .filter(comment => comment.postSlug === postSlug)
-    .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
-}
-
 // Add a new comment
-export function addComment(comment: Omit<Comment, 'id' | 'createdAt'>): Comment {
-  const comments = getComments();
+export async function addComment(comment: Omit<Comment, 'id' | 'createdAt'>): Promise<Comment> {
   const newComment: Comment = {
     ...comment,
     id: generateId(),
     createdAt: new Date().toISOString(),
   };
   
-  comments.push(newComment);
-  
-  ensureDataDirectory();
-  fs.writeFileSync(COMMENTS_FILE, JSON.stringify(comments, null, 2));
-  
-  return newComment;
+  try {
+    await kv.lpush(`comments:${comment.postSlug}`, JSON.stringify(newComment));
+    return newComment;
+  } catch (error) {
+    console.error('Error adding comment:', error);
+    throw error;
+  }
 }
 
 // Generate a simple ID
