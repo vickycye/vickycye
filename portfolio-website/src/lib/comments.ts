@@ -1,10 +1,13 @@
-import { kv } from '@vercel/kv';
+import { Redis } from '@upstash/redis';
 import { Comment } from './types';
+
+// Initialize Redis
+const redis = Redis.fromEnv();
 
 // Get comments for a specific post
 export async function getCommentsByPostSlug(postSlug: string): Promise<Comment[]> {
   try {
-    const comments = await kv.lrange(`comments:${postSlug}`, 0, -1);
+    const comments = await redis.lrange(`comments:${postSlug}`, 0, -1);
     return comments
       .map(comment => JSON.parse(comment))
       .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
@@ -23,7 +26,7 @@ export async function addComment(comment: Omit<Comment, 'id' | 'createdAt'>): Pr
   };
   
   try {
-    await kv.lpush(`comments:${comment.postSlug}`, JSON.stringify(newComment));
+    await redis.lpush(`comments:${comment.postSlug}`, JSON.stringify(newComment));
     return newComment;
   } catch (error) {
     console.error('Error adding comment:', error);
