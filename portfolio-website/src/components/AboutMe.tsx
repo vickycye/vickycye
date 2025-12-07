@@ -49,15 +49,15 @@ export const AboutMe = () => {
               </h2>
               <p className="text-[var(--cream)]">
                 Hi! I am an undergraduate student studying <span className="font-bold text-[var(--solid-orange-10)]">Computer Science</span> at 
-                the <span className="font-bold text-[var(--mauve)]">University of Washington's Paul Allen School for CSE</span>, 
+                the <span className="font-bold text-[var(--mauve)]">University of Washington&apos;s Paul Allen School for CSE</span>, 
                 passionately pursuing a career in computer vision and artificial intelligence, with a focus on <span className="font-bold text-[var(--light-orange-10)]">image/video/3D generation</span>. 
                 I am dedicated to contributing to the rapidly evolving field of generative AI, driven by how the breakthroughs of 2020 reshaped not only the way I work but also 
                 how I think. Seeing AI enable ideas to be explored 10x faster made me intensely curious about how these systems function and how to make them safer, 
                 more reliable, and more aligned with human values and needs. 
                 <br></br>
                 <br></br>
-                I'm currently the most curious about <span className="font-bold text-[var(--light-orange-10)]">vision-language models, image editing, fine-tuning foundation models</span>, and <span className="font-bold text-[var(--light-orange-10)]">model evaluation</span>. 
-                As I continue exploring this space, my goal is to help shape AI systems that empower people by being trustworthy, intuitive, and creative. I'm excited to 
+                I&apos;m currently the most curious about <span className="font-bold text-[var(--light-orange-10)]">vision-language models, image editing, fine-tuning foundation models</span>, and <span className="font-bold text-[var(--light-orange-10)]">model evaluation</span>. 
+                As I continue exploring this space, my goal is to help shape AI systems that empower people by being trustworthy, intuitive, and creative. I&apos;m excited to 
                 keep pushing the boundaries of what these models can do while contributing to a future where AI is a force for good.
               </p>
             </div>
