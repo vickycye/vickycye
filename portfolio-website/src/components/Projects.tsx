@@ -67,7 +67,7 @@ export const Projects = () => {
                 />
               </div>
               <div className="absolute h-full w-full bg-[var(--palette-blood-orange)]/90 flex items-center justify-center opacity-0 hover:opacity-100 transition-all duration-300">
-                <Link href="#" className="text-white bg-[var(--discord-gray)] font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-[var(--discord-lighter-gray)]">In Progress...</Link>
+                <Link href="#" className="text-white bg-[var(--discord-gray)] font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-[var(--discord-lighter-gray)]">Writeup coming after finals...</Link>
               </div>
             </div>
             <div className="pointer-events-none absolute inset-px rounded-lg shadow lg:rounded-l-[2rem]"></div>
@@ -99,30 +99,27 @@ export const Projects = () => {
             <div className="pointer-events-none absolute inset-px rounded-lg shadow max-lg:rounded-t-[2rem]"></div>
           </div>
 
-          {/* AQI Project */}
+          {/* 3D Reconstruction Project */}
           <div className="relative max-lg:row-start-3 lg:col-start-2 lg:row-start-2">
             <div className="absolute inset-px rounded-lg bg-[var(--cream)]"></div>
             <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)]">
               <div className="px-8 pt-8 sm:px-10 sm:pt-10">
-                <p className="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">Software Development & API Usage</p>
+                <p className="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">3D Reconstruction</p>
                 <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
-                  Created a responsive, user-friendly website interface that tracks real-time AQI & oﬀers tailored health recommendations 
-                  using Weather, OpenAI,& AQI APIs.
+                  Under construction, exciting things coming soon!
                 </p>
               </div>
               <div className="flex flex-1 items-center [container-type:inline-size] max-lg:py-6 lg:pb-2">
                 <Image 
                   className="h-[min(152px,40cqw)] object-cover px-0.5"
-                  src="/images/aqi.png"
-                  alt="AQI Project"
+                  src="/images/placeholder.jpg"
+                  alt="3D Reconstruction Project"
                   width={500}
                   height={152}
                 />
               </div>
               <div className="absolute h-full w-full bg-[var(--palette-blood-orange)]/90 flex items-center justify-center opacity-0 hover:opacity-100 transition-all duration-300">
-                <a href="https://github.com/AQH-scale/AQH-scale.github.io" className="text-white bg-[var(--discord-gray)] hover:bg-solid-orange-10 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-discord-lighter-gray dark:hover:bg-solid-orange-10">Repository</a>
-                <div className="px-5"></div>
-                <a href="https://devpost.com/software/air-quality-health" className="text-white bg-[var(--discord-gray)] hover:bg-solid-orange-10 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-discord-lighter-gray dark:hover:bg-solid-orange-10">Devpost</a>
+                <p className="text-white font-medium text-lg px-4 text-center">Studying for finals...</p>
               </div>
             </div>
             <div className="pointer-events-none absolute inset-px rounded-lg shadow"></div>
@@ -143,18 +140,24 @@ export const Projects = () => {
               <div className="flex flex-1 items-center justify-center px-8 max-lg:pb-12 max-lg:pt-10 sm:px-10 lg:pb-2">
                 <Image 
                   className="w-full max-lg:max-w-xs rounded-xl"
-                  src="/images/paper_writing.png"
+                  src="/images/JAMIA.png"
                   alt="Research Publication"
                   width={400}
                   height={300}
                 />
               </div>
               <div className="absolute h-full w-full bg-[var(--palette-sun-orange)]/90 flex items-center justify-center opacity-0 hover:opacity-100 transition-all duration-300">
-                <Link href="#" className="text-white bg-[var(--discord-gray)] font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-discord-lighter-gray">In Progress...</Link>
+                <Link href="#" className="text-white bg-[var(--discord-gray)] font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-discord-lighter-gray">Pending Review...</Link>
               </div>
             </div>
             <div className="pointer-events-none absolute inset-px rounded-lg shadow max-lg:rounded-b-[2rem] lg:rounded-r-[2rem]"></div>
           </div>
+        </div>
+        
+        <div className="mt-10 flex justify-center">
+            <Link href="/archive" className="text-sm font-semibold leading-6 text-[var(--light-orange-10)]">
+                See archives <span aria-hidden="true">→</span>
+            </Link>
         </div>
       </div>
     </div>
