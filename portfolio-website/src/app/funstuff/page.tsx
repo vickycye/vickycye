@@ -86,15 +86,15 @@ export default function FunStuff() {
               </div>
               <div className="flex flex-col-reverse gap-1">
                 <dt className="text-base/7 text-[var(--cream)] animate-slideinright">Hackathons Attended</dt>
-                <dd className="text-4xl font-semibold tracking-tight text-[var(--light-orange-10)] animate-slideinleft">4</dd>
+                <dd className="text-4xl font-semibold tracking-tight text-[var(--light-orange-10)] animate-slideinleft">6</dd>
               </div>
               <div className="flex flex-col-reverse gap-1">
                 <dt className="text-base/7 text-[var(--cream)] animate-slideinright">WPM Typing Speed</dt>
                 <dd className="text-4xl font-semibold tracking-tight text-[var(--light-orange-10)] animate-slideinleft">150+</dd>
               </div>
               <div className="flex flex-col-reverse gap-1">
-                <dt className="text-base/7 text-[var(--cream)] animate-slideinright">Minutes of Spotify in 2024</dt>
-                <dd className="text-4xl font-semibold tracking-tight text-[var(--light-orange-10)] animate-slideinleft">56,174</dd>
+                <dt className="text-base/7 text-[var(--cream)] animate-slideinright">Minutes of Spotify in 2025</dt>
+                <dd className="text-4xl font-semibold tracking-tight text-[var(--light-orange-10)] animate-slideinleft">43,779</dd>
               </div>
             </dl>
           </div>
