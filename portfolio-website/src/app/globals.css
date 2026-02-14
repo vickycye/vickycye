@@ -357,3 +357,110 @@ pre[data-language="json"]::after { content: "json"; }
 .token.italic { font-style: italic; }
 .token.deleted { color: #ff5252; background-color: rgba(255, 0, 0, 0.1); }
 .token.inserted { color: #a6e22e; background-color: rgba(0, 255, 0, 0.1); }
+
+/* Valentine's 2-14: water drop + reveal */
+@keyframes valentine-drop-fall {
+  0% {
+    transform: translateY(-20px) scale(0.8);
+    opacity: 0.9;
+  }
+  70% {
+    transform: translateY(55vh) scale(1);
+    opacity: 0.95;
+  }
+  85% {
+    transform: translateY(58vh) scale(1.15, 0.85);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(62vh) scale(1.4, 0.4);
+    opacity: 0;
+  }
+}
+
+/* Drops landing at different heights */
+@keyframes valentine-drop-fall-high {
+  0% {
+    transform: translateY(-20px) scale(0.8);
+    opacity: 0.9;
+  }
+  70% {
+    transform: translateY(32vh) scale(1);
+    opacity: 0.95;
+  }
+  85% {
+    transform: translateY(35vh) scale(1.15, 0.85);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(39vh) scale(1.4, 0.4);
+    opacity: 0;
+  }
+}
+
+@keyframes valentine-drop-fall-mid {
+  0% {
+    transform: translateY(-20px) scale(0.8);
+    opacity: 0.9;
+  }
+  70% {
+    transform: translateY(50vh) scale(1);
+    opacity: 0.95;
+  }
+  85% {
+    transform: translateY(53vh) scale(1.15, 0.85);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(57vh) scale(1.4, 0.4);
+    opacity: 0;
+  }
+}
+
+@keyframes valentine-drop-fall-low {
+  0% {
+    transform: translateY(-20px) scale(0.8);
+    opacity: 0.9;
+  }
+  70% {
+    transform: translateY(68vh) scale(1);
+    opacity: 0.95;
+  }
+  85% {
+    transform: translateY(71vh) scale(1.15, 0.85);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(75vh) scale(1.4, 0.4);
+    opacity: 0;
+  }
+}
+
+@keyframes valentine-ripple {
+  0% {
+    transform: scale(0.5);
+    opacity: 0.6;
+    border-width: 2px;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+    border-width: 1px;
+  }
+}
+
+@keyframes valentine-message-reveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes valentine-heart-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
