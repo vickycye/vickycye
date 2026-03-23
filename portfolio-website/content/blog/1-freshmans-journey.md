@@ -18,7 +18,7 @@ I remember move-in day vividly. My father had to sit in the back seat while hold
 "You'll thank yourself later," I told myself as I puzzled through LaGrange errors while my high school friends posted photos of themselves in front of Mount Fuji or on the beaches of Cancun. "This is an investment."
 
 
-### Fall Quarter: Ambitious or Stupid?
+fall quarter--
 
 My first week on campus, I had clutched my ambitious schedule almost like a shield. I had Linear Algebra and Discrete Math, as well as several other electives to fulfill GenEd requirements. I had carefully selected the most challenging courses aviailable to me at that time. In lecture halls filled with running-start students and confident upperclassmen, I felt simultaneously proud and utterly alone. Besides my high school friends that lived with me in the same dorm, there was not a single familar face in my classes. 
 
@@ -26,7 +26,7 @@ Free time became a luxury as problem sets and coding assignments seemed to multi
 
 I didn't really question my choices until someone online asked why I decided to do all this. "I'm getting ahead," I replied, though simultaneously the knot in my stomach tightened. Was I missing something important about college life by burying myself in coursework?
 
-### Winter Quarter: Finding My People
+#### winter quarter--
 
 It was during a particularly mundane evening after our Data Structure and Parallelism midterm that I really got to know the two freshmen I started talking to. One was homeschooled, and he really had a passion for math--something that I madly respected. He took every opportunity to learn, and didn't hesitate to share his knowledge with others. Another one's experiences felt similar to mine, as he took several courses over the summer too, to get a head start. "You're insane," we told each other--whatever that implied.  
 
@@ -35,7 +35,7 @@ Our shared academic masochism forged a very unique connection. We began meeting 
 I started to recognize that my study habits needed refinement. Instead of cramming late into the night, we established consistent study blocks throughout the week. We learned to break down complex problems together, taking turns explaining concepts until everyone understood. I also discovered that trying to reason through by teaching others solidified my own understanding far better than re-reading textbooks and lecture notes alone. 
 
 
-### Spring Quarter: Growth and Balance
+#### spring quarter--
 
 Although it was nice for two quarters, the study group (or may I now say, the friend group) started to diverge. We had neared the end of the mid-level introductory courses and everyone had their own interests, so we started to register for different classes. Although everyone still keeps in touch and we still occasionally chat in the CS building's cafe, those who I've met in the beginning are still with me. 
 
@@ -59,7 +59,7 @@ Eight months ago, I came to college seeking academic challenges. I found them, c
 
 I still meet new people in every class I take, forming connections that enhance each course in unique ways. But my high school friends who share my dorm and those first two classmates from autumn and winter quarters remain my anchors. With my high school friends, I can truly relax--they know the weirdest me, and there's a comfort in shared history. We can all be silly and goofy in ways I might not feel comfortable with newer friends yet. 
 
-### Looking Forward
+--
 
 As spring quarter winds down and I reflect on my freshman year, I can't help but wonder about the next wave of ambitious students who will arrive in the fall. Will I recognize myself in their determined expressions and color-coded planners? Will they too believe that sheer academic force can substitute for teh messier aspects of personal growth?
 
