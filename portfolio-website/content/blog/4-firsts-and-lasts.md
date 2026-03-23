@@ -17,7 +17,7 @@ It was the week before graduation, and a friend said something offhand. It was s
 
 We spend so much of our lives chasing firsts. First days, first wins, first times doing something that scares us. Firsts feel like beginnings, and beginnings feel like promise. Nobody tells you to pay attention to the lasts.
 
-#### A Life Full of Firsts
+--
 
 I had spent four years collecting firsts without realizing it. The first orchestra concert, where, for reasons I can no longer fully explain, I dressed up as Ghostface. The first day I finally met my covid online freshman friends in person. 
 
@@ -25,8 +25,7 @@ Those firsts announced themselves boldly. They had a quality of *newness* that m
 
 That's the thing about lasts, most of them are disguised as insignificant, ordinary moments.
 
-#### The Weight of Lasts
-Once I started noticing, I couldn't stop.
+--
 
 It was the last time I'd drive through that same pothole at the entrance of the parking lot. The last time I'd step into the orchestra room at 7:20am, the room still smelling like rosin from the day before. The last time I'd sit in the history classroom playing TFT with my friends while we should've been doing something else. That last time we'd somehow set off a minor catastrophe trying to make mac and cheese in the prep room of the biotech classroom, the kind of memory that sounds insane out of context and yet makes perfect sense to everyone who was there.
 
