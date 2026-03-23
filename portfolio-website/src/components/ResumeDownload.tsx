@@ -1,6 +1,8 @@
 'use client';
 
 import { useState } from 'react';
+import { DownloadTracker } from './DownloadTracker';
+import { DownloadCount } from './DownloadCount';
 
 export function ResumeDownload() {
   const [showModal, setShowModal] = useState(false);
@@ -11,17 +13,6 @@ export function ResumeDownload() {
 
   const closeModal = () => {
     setShowModal(false);
-  };
-
-  const downloadResume = () => {
-    // Create a link to your resume file
-    const link = document.createElement('a');
-    link.href = '/resume.pdf'; // Make sure to add your resume.pdf to the public folder
-    link.download = 'Vicky_Ye_Resume.pdf'; // Name that will appear when downloading
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    closeModal();
   };
 
   return (
@@ -57,7 +48,10 @@ export function ResumeDownload() {
           {/* Modal */}
           <div className="bg-[var(--discord-gray)] rounded-lg shadow-xl p-6 max-w-sm w-full border border-[var(--discord-lighter-gray)]">
             <h3 className="text-xl font-semibold text-[var(--cream)] mb-4">Download Resume</h3>
-            <p className="text-[var(--cream)] mb-6">Would you like to download Vicky&apos;s resume?</p>
+            <p className="text-[var(--cream)] mb-2">Would you like to download Vicky&apos;s resume?</p>
+            <p className="text-[var(--off-white)]/70 text-sm mb-6">
+              <DownloadCount fileId="resume" />
+            </p>
             
             <div className="flex justify-end space-x-3">
               <button
@@ -66,12 +60,15 @@ export function ResumeDownload() {
               >
                 Cancel
               </button>
-              <button
-                onClick={downloadResume}
+              <DownloadTracker
+                fileId="resume"
+                href="/resume.pdf"
+                downloadFilename="Vicky_Ye_Resume.pdf"
+                onAfterDownload={closeModal}
                 className="px-4 py-2 bg-[var(--solid-orange-10)] text-[var(--discord-gray)] rounded hover:bg-[var(--dark-orange)] transition-colors"
               >
                 Download
-              </button>
+              </DownloadTracker>
             </div>
           </div>
         </div>
