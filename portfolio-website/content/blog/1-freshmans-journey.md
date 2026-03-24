@@ -18,7 +18,7 @@ I remember move-in day vividly. My father had to sit in the back seat while hold
 "You'll thank yourself later," I told myself as I puzzled through LaGrange errors while my high school friends posted photos of themselves in front of Mount Fuji or on the beaches of Cancun. "This is an investment."
 
 
-fall quarter--
+#### fall quarter--
 
 My first week on campus, I had clutched my ambitious schedule almost like a shield. I had Linear Algebra and Discrete Math, as well as several other electives to fulfill GenEd requirements. I had carefully selected the most challenging courses aviailable to me at that time. In lecture halls filled with running-start students and confident upperclassmen, I felt simultaneously proud and utterly alone. Besides my high school friends that lived with me in the same dorm, there was not a single familar face in my classes. 
 
