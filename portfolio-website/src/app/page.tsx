@@ -46,7 +46,7 @@ export default function Home() {
               className="text-[var(--cream)] hover:underline font-semibold"
               aria-label="UTCS webring random"
             >
-              <strong>random</strong>
+              <strong>random!</strong>
             </a>
             <span className="text-[var(--cream)]/70">)</span>
             <span className="text-[var(--cream)]/70">|</span>
